@@ -1,3 +1,8 @@
+body {
+  background: #004C1A;
+  padding: 40px 100px;
+}
+
 .card {
   float: left;
   border: solid 1px black;
@@ -23,3 +28,6 @@
   overflow: auto;
 }
 
+h2 {
+  color: rgba(253, 255, 188, 0.8);
+}

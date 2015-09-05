@@ -1,6 +1,7 @@
 class window.AppView extends Backbone.View
   template: _.template '
     <button class="hit-button">Hit</button> <button class="stand-button">Stand</button>
+    <button class="new-round">New Round</button> <button class="new-game">New Game</button>
     <div class="player-hand-container"></div>
     <div class="dealer-hand-container"></div>
   '
@@ -13,6 +14,13 @@ class window.AppView extends Backbone.View
     'click .stand-button': ->
       if @model.get('game').get 'inPlay'
         @model.get('game').get('dealerHand').stand()
+    'click .new-round': ->
+      @model.get('game').newRound()
+      @render()
+    'click .new-game': ->
+      @model.get('game').newGame()
+      @render()
+
 
   initialize: ->
     `
