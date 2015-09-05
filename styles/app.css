@@ -2,7 +2,6 @@ body {
   background: #004C1A;
   padding: 40px 100px;
 }
-
 .card {
   float: left;
   border: solid 1px black;
@@ -30,4 +29,28 @@ body {
 
 h2 {
   color: rgba(253, 255, 188, 0.8);
+}
+
+h1 {
+  color: red;
+}
+.scoreboard {
+
+}
+.game-container {
+  width: 70%;
+  float: left;
+  padding-bottom: 100px;
+}
+.scoreboard-container {
+  width: 30%;
+  float: left;
+  color: white;
+}
+ul {
+  padding: 0;
+}
+li {
+  display: inline;
+  margin-right: 10px;
 }
