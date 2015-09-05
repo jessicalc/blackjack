@@ -15,6 +15,19 @@ class window.AppView extends Backbone.View
         @model.get('game').get('dealerHand').stand()
 
   initialize: ->
+    `
+    var context = this
+    `
+    @model.get('game').get('dealerHand').on 'endGame', ->
+      @render()
+      dealerScore = @model.get('game').get('dealerHand').minScore();
+      playerScore = @model.get('game').get('playerHand').minScore();
+      winner = if playerScore > dealerScore then "player" else "dealer"
+      setTimeout ->
+        alert "dealerScore is: #{dealerScore} and playerScore is: #{playerScore}
+          #{winner} wins!"
+      , 10
+    , @
     @render()
 
   render: ->

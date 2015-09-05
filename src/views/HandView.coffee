@@ -4,10 +4,18 @@ class window.HandView extends Backbone.View
   template: _.template '<h2><% if(isDealer){ %>Dealer<% }else{ %>You<% } %> (<span class="score"></span>)</h2>'
 
   initialize: ->
-    @collection.on 'add remove change', => @render()
-    @collection.on 'playerBusted', -> alert 'you went bust!'
-    @collection.on 'dealerBusted', -> alert 'dealer went bust'
     @render()
+    @collection.on 'add remove change', => @render()
+    @collection.on 'playerBusted', =>
+      @render()
+      setTimeout ->
+        alert 'you went bust!'
+      , 10
+    @collection.on 'dealerBusted', =>
+      @render()
+      setTimeout ->
+        alert 'dealer went bust'
+      , 10
 
     # events:
     # 'click .hit-button': -> @model.get('game').get('playerHand').hit()

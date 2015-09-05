@@ -16,10 +16,10 @@ class window.Hand extends Backbone.Collection
   stand: ->
     @trigger 'stand'
     @first().flip()
-    debugger;
     @add(@deck.pop()) while @minScore() <= 16
     if @minScore() > 21
       @trigger 'dealerBusted'
+    else @trigger 'endGame'
     # while score is less than 16
       # dealer hits
     # if dealer busts, player wins
